@@ -1,0 +1,128 @@
+<?php
+$profpic = "images/sign-up-btn.gif";
+?>
+<?php
+// Create connection
+$con=mysqli_connect("localhost","root","","Paper_Website");
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+?>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style>
+table,th,td
+{
+border:1px solid black;
+}
+</style>
+
+<body>
+	<div class = "AuthorDiv" style="float: left;">
+		<div class = "AuthorDiv2" style="float: left; bottom: 10px">
+			<table class="table" style="position:relative; width:100%;">
+				<th COLSPAN="4">
+					<h3><br>Your Posted</h3>
+				</th>
+				<tr>
+					<td width="60%">Title</td>
+					<td width="15%">Date</td>
+					<td width="15%">Status</td>
+					<td width="10%">Selected</td>
+				<tr>
+					<?php echo <td> The Paper of Doom; ?> <?php echo </td>; ?>
+					<td>03/06/1990</td>		
+					<td>Pending...</td>
+					<td>
+						<form style="font-size:20px; position:relative; left: 13px; top: 8px;">
+						<input type="radio" checked><br>
+						</form>
+					</td>
+				</tr>
+				<!--<tr>
+					<td>The Long Lost Paper of Double Doom</td>
+					<td>03/11/1101</td>		
+					<td>Accepted!</td>
+					<td>
+						<form style="font-size:20px; position:relative; left: 13px; top: 8px;">
+						<input type="radio"><br>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>The Long Lost Paper of Ridiculous Title Length That Survived the Ages</td>
+					<td>07/07/1707</td>		
+					<td>Rejected</td>
+					<td>
+						<form style="font-size:20px; position:relative; left: 13px; top: 8px;">
+						<input type="radio"><br>
+						</form>
+					</td>
+				</tr>-->
+					
+				<!--<?php $result = mysqli_query($con,"SELECT * FROM Paper WHERE userid = 12345");
+
+					while($row = mysqli_fetch_array($result)){ ?>  						
+  						<td><?php echo $row['title']; ?></td>
+						<td><?php echo $row['date']; ?></td>		
+						<td><?php echo switch (row['status']){
+								case 1:
+								  echo "approved";
+								  break;
+								case 2:
+								  "rejected";
+								  break;
+								default:
+								  echo "pending";
+								} ?> </td>
+						<td>
+						<form style="font-size:20px; position:relative; left: 13px; top: 8px;">
+							<input type="radio" checked><br>
+							</form>
+						</td>
+ 					 <?php } ?> -->
+				 
+
+			
+			
+			<!-------------------------------------------------------------------------------->	
+			</table>
+			<label style="position:relative; left:35%"> Submit a Paper Below </label>
+			<form style="position:relative; left:30%" name="input" action="" method="get">
+				Paper Title: <input type="text" name="user">
+			</form>
+			<form style="position:relative; left:30%" name="input" action="" method="get">
+				<input type="file" id="file">
+			</form>	
+			<form style="position:relative; left:42%" name="input" action="">
+				<input type="submit" value="Submit">
+			</form>
+
+			<!-------------------------------------------------------------------------------->
+		</div>
+
+		<div class="AuthorDiv2" style="float: left; left:2px; bottom: 10px">
+			<table class="table" style="position:relative; width:100%">
+				<tr>
+					<th COLSPAN="3"><h3>Reviewer Comments</h3>
+					</th>
+				</tr>
+				<tr>
+					<th width="20%">Reviewer</th>
+					<th width="10%">Rating</th>
+					<th width="70%">Comment</th>
+				</tr>
+				<tr ALIGN="CENTER">
+					<td>John Doe</td>
+					<td>* * * * *</td>
+					<td>This paper was amazing because of many reasons. Reason one, it contained the word butterfly. Reason two, I did not have to think very much while reading it. Reason three, let's be honest here I'm just looking for filler at this point. Reason four, atma farming in FF14 is just plain not fun. Reason five, I am out of reasons.</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
